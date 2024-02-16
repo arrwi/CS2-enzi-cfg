@@ -4,11 +4,11 @@
  
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
-alias defZ      "bind z +cl_show_team_equipment"
+alias defZ      "bind z '+cl_show_team_equipment'"
 alias defC      "bind c player_ping"
 alias defQ      "bind q lastinv"
-alias defE      "bind e +use"
-alias defF      "bind f +lookatweapon"
+alias defE      "bind e '+use'"
+alias defF      "bind f '+lookatweapon'"
 alias defG      "bind g drop"
 //Part 2 (keyboard letters gotta be the same as part 1)
 alias keyZ      "bind z customZ"
@@ -28,7 +28,7 @@ alias customG   "slot9"
 alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG"
 alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; -lookatweapon"
 //Part 5 (Holding this will rebind default to secondary commands)
-bind mouse4 +secondarycommand
+bind mouse4 "+secondarycommand"
  
 // Drop C4 bind
 alias "+dropc4" "slot3; slot5"
@@ -57,10 +57,10 @@ alias -djump "-jump; -duck"
 bind space "+djump"
  
 // Voice chat volume
-snd_voipvolume 0.6
+snd_voipvolume 0.7
  
 // r_drawtracers 0 //only for sv_cheats 1
-bind ctrl "+duck;noclip"
+bind ctrl "+duck"
  
 cl_teamid_overhead_mode 1
 // "toggle show_loadout_toggle"
@@ -69,16 +69,15 @@ cl_teamid_overhead_mode 1
 alias "refundall" "sellback 0;sellback 1;sellback 2;sellback 3;sellback 4;sellback 5;sellback 6;sellback 8;sellback 9;sellback 10;sellback 11;sellback 12;sellback 13;sellback 14;sellback 15;sellback 16;sellback 17;sellback 18;sellback 26;sellback 26;sellback 27;sellback 28;sellback 29;sellback 30;sellback 32;sellback 33;sellback 34;sellback 35;play ui\panorama\itemtile_click_02.vsnd_c"
 bind 0 refundall
  
-r_show_build_info O
 // Show auto-netgraph, fps, and build info on TAB
-alias +netg "cl_showfps 2; cq_netgraph_problem_show_auto 1;+showscores";
+alias +netg "cl_showfps 4; cq_netgraph_problem_show_auto 1;+showscores";
 alias -netg "cl_showfps 0; cq_netgraph_problem_show_auto 0;-showscores"
 bind TAB "+netg"
  
 cl_showfps 0
 cq_netgraph 0
 fps_max 0
-r_show_build_info O
+r_show_build_info false
  
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
@@ -91,6 +90,8 @@ viewmodel_fov 68
 viewmodel_offset_x 2.5
 viewmodel_offset_y 2
 viewmodel_offset_z -2
+
+cl_usenewbob 1
  
 sensitivity 0.85
  
