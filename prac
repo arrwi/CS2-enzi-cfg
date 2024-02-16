@@ -1,0 +1,11 @@
+// Practice config for CS2
+sv_cheats 1
+
+// Remove Smokes
+bind n "ent_fire smokegrenade_projectile kill"
+
+// Rethrow last nade
+bind h "sv_rethrow_last_grenade"
+
+// Regen
+bindtoggle k "sv_regeneration_force_on"
