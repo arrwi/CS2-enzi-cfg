@@ -1,6 +1,7 @@
 // enzi cs2 autoexec config 
 // cs2folder>game>csgo>cfg>autoexec.cfg
-// Launch settings: -console -high -nojoy -novid +exec autoexec -language english
+// Launch settings: -console -nojoy -novid +exec autoexec -language english -fullscreen -threads 9 -w 1440 -h 1080 -forcenovsync
+// "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
  
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
@@ -34,6 +35,11 @@ bind mouse4 "+secondarycommand"
 alias "+dropc4" "slot3; slot5"
 alias "-dropc4" "drop"
 bind "mouse3" "+dropc4"
+
+// Bigger radar while walking
+alias "+bigr" "+sprint; cl_radar_scale 0.7"
+alias "-bigr" "-sprint; cl_radar_scale 0.35"
+bind "SHIFT" "+bigr";
  
 // Consistent bhops
 alias "+jump_" "+jump;+jump"
@@ -48,7 +54,7 @@ alias "-runthrow" "-jump;-forward"
 bind v "+runthrow; +throwaction"
  
 bind mouse5 +duck
- 
+bind "r" "+reload; -attack; -attack2" // for consistent Middle click throws
 bind x "+voicerecord"
  
 // Crouch Jump Bind
@@ -57,7 +63,23 @@ alias -djump "-jump; -duck"
 bind space "+djump"
  
 // Voice chat volume
-snd_voipvolume 0.7
+snd_voipvolume 0.6
+
+// Sound
+volume 1
+sound_device_override
+snd_headphone_eq "0" // EQ Profile: 0 = Natural, 1 = Crisp, 2 = Smooth
+// L/R ?
+snd_steamaudio_enable_perspective_correction 0
+voice_modenable "1"
+
+// Music Volume
+snd_deathcamera_volume 0
+snd_mapobjective_volume 0 // The bomb music played prior to the ten-second warning
+snd_menumusic_volume 0
+snd_roundend_volume 0
+snd_roundstart_volume 0
+snd_tensecondwarning_volume 0.15
  
 // r_drawtracers 0 //only for sv_cheats 1
 bind ctrl "+duck"
@@ -73,15 +95,16 @@ bind 0 refundall
 alias +netg "cl_showfps 4; cq_netgraph_problem_show_auto 1;+showscores";
 alias -netg "cl_showfps 0; cq_netgraph_problem_show_auto 0;-showscores"
 bind TAB "+netg"
- 
+
 cl_showfps 0
 cq_netgraph 0
+cl_hud_telemetry_serverrecvmargin_graph_show 1
 fps_max 0
 r_show_build_info false
  
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
-cl_radar_scale 0.36
+cl_radar_scale 0.35
 cl_radar_square_with_scoreboard 0
 cl_hud_radar_scale 2
 cl_crosshair_friendly_warning 0
@@ -91,10 +114,16 @@ viewmodel_offset_x 2.5
 viewmodel_offset_y 2
 viewmodel_offset_z -2
 
+novid
+con_enable "1"
 cl_usenewbob 1
- 
+cl_hudcolor 4 // 1 – white; 2 – light blue; 3 – dark blue; 4 – purple; 5 – red; 6 – orange; 7 – yellow; 8 – green; 9 – aqua; 10 – pink; 11 – dark yellow
+cl_use_opens_buy_menu 0
+
 sensitivity 0.85
  
+fps_max_ui 150
 r_fullscreen_gamma 2.3
+mm_dedicated_search_maxping 60
  
 alias gg "say gg; disconnect"
