@@ -3,6 +3,26 @@
 // Launch settings: -console -nojoy -novid +exec autoexec -language english -fullscreen -threads 9 -w 1440 -h 1080 -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
  
+con_enable 1
+battery_saver "false"
+cl_showfps 0
+cq_netgraph 0
+cl_hud_telemetry_serverrecvmargin_graph_show 1
+fps_max 0
+r_show_build_info false
+install_dlc_workshoptools_cvar "1"
+lobby_default_privacy_bits2 "0"
+ui_setting_advertiseforhire_auto "0"
+cl_playerspray_auto_apply "true"
+cl_sniper_delay_unscope "false"
+cl_sniper_auto_rezoom "true"
+cl_silencer_mode "0"
+cl_showloadout "true"
+cl_use_opens_buy_menu "false"
+cl_buywheel_nonumberpurchasing "true"
+cl_buywheel_donate_key "1" // ?? shift
+cl_autohelp 0
+
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
 alias defZ      "bind z '+cl_show_team_equipment'"
@@ -11,6 +31,7 @@ alias defQ      "bind q lastinv"
 alias defE      "bind e '+use'"
 alias defF      "bind f '+lookatweapon'"
 alias defG      "bind g drop"
+alias defT      "bind t '+spray_menu'"
 //Part 2 (keyboard letters gotta be the same as part 1)
 alias keyZ      "bind z customZ"
 alias keyC      "bind c customC"
@@ -18,6 +39,7 @@ alias keyQ      "bind q customQ"
 alias keyE      "bind e customE"
 alias keyF      "bind f customF"
 alias keyG      "bind g customG"
+alias keyT      "bind t customT"
 //Part 3 (Secondary Commands)
 alias customZ   "radio"
 alias customC   "slot10"
@@ -25,9 +47,10 @@ alias customQ   "slot6"
 alias customE   "slot7"
 alias customF   "slot8; slot12"
 alias customG   "slot9"
+alias customT   "+radialradio"
 //Part 4 (Execution)
-alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG"
-alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; -lookatweapon"
+alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG; keyT"
+alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; defF; -lookatweapon"
 //Part 5 (Holding this will rebind default to secondary commands)
 bind mouse4 "+secondarycommand"
  
@@ -56,6 +79,7 @@ bind v "+runthrow; +throwaction"
 bind mouse5 +duck
 bind "r" "+reload; -attack; -attack2" // for consistent Middle click throws
 bind x "+voicerecord"
+bind "6" "slot12" // healthshot
  
 // Crouch Jump Bind
 alias +djump "+jump; +duck"
@@ -69,7 +93,7 @@ snd_voipvolume 0.6
 volume 1
 sound_device_override
 snd_headphone_eq "0" // EQ Profile: 0 = Natural, 1 = Crisp, 2 = Smooth
-// L/R ?
+snd_spatialize_lerp "0"
 snd_steamaudio_enable_perspective_correction 0
 voice_modenable "1"
 
@@ -95,12 +119,6 @@ bind 0 refundall
 alias +netg "cl_showfps 4; cq_netgraph_problem_show_auto 1;+showscores";
 alias -netg "cl_showfps 0; cq_netgraph_problem_show_auto 0;-showscores"
 bind TAB "+netg"
-
-cl_showfps 0
-cq_netgraph 0
-cl_hud_telemetry_serverrecvmargin_graph_show 1
-fps_max 0
-r_show_build_info false
  
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
@@ -115,10 +133,11 @@ viewmodel_offset_y 2
 viewmodel_offset_z -2
 
 novid
-con_enable "1"
 cl_usenewbob 1
 cl_hudcolor 4 // 1 – white; 2 – light blue; 3 – dark blue; 4 – purple; 5 – red; 6 – orange; 7 – yellow; 8 – green; 9 – aqua; 10 – pink; 11 – dark yellow
 cl_use_opens_buy_menu 0
+hud_scaling "1"
+cl_hud_radar_scale 1.15 
 
 sensitivity 0.85
  
@@ -127,3 +146,10 @@ r_fullscreen_gamma 2.3
 mm_dedicated_search_maxping 60
  
 alias gg "say gg; disconnect"
+
+// Thelemetry
+//cl_hud_telemetry_frametime_show "2" //Show frame time and FPS
+//cl_hud_telemetry_frametime_poor "100" //Frame time warning threshold
+//cl_hud_telemetry_ping_show "2" //Show ping
+//cl_hud_telemetry_net_misdelivery_show "2" //Show packet loss / misdelivery
+//cl_hud_telemetry_net_misdelivery_poor "5" //Packet misdelivery warning threshold
