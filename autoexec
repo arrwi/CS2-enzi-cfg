@@ -24,13 +24,13 @@ cl_autohelp 0
 
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
-alias defZ      "bind z '+cl_show_team_equipment'"
+alias defZ      "bind z +cl_show_team_equipment"
 alias defC      "bind c player_ping"
 alias defQ      "bind q lastinv"
-alias defE      "bind e '+use'"
-alias defF      "bind f '+lookatweapon'"
+alias defE      "bind e +use"
+alias defF      "bind f +lookatweapon"
 alias defG      "bind g drop"
-alias defT      "bind t '+spray_menu'"
+alias defT      "bind t +spray_menu"
 //Part 2 (keyboard letters gotta be the same as part 1)
 alias keyZ      "bind z customZ"
 alias keyC      "bind c customC"
