@@ -1,6 +1,6 @@
 // enzi cs2 autoexec config 
 // cs2folder>game>csgo>cfg>autoexec.cfg
-// Launch settings: -console -nojoy -novid +exec autoexec -language english -fullscreen -threads 9 -w 1440 -h 1080 -forcenovsync
+// Launch settings: -console -nojoy -novid +exec autoexec -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
  
 con_enable 1
@@ -56,7 +56,7 @@ bind mouse4 "+secondarycommand"
 // Drop C4 bind
 alias "+dropc4" "slot3; slot5"
 alias "-dropc4" "drop"
-bind "mouse3" "+dropc4"
+bind "mouse3" "+dropc4; noclip"
 
 // Bigger radar while walking
 alias "+bigr" "+sprint; cl_radar_scale 0.5"
@@ -76,7 +76,7 @@ alias "-runthrow" "-jump;-forward"
 bind v "+runthrow; +throwaction"
  
 // Binds
-bind mouse5 +duck
+bind mouse5 +duck;
 bind "r" "+reload; -attack; -attack2" // for consistent Middle click throws
 bind x "+voicerecord"
 bind "6" "slot12" // healthshot
@@ -100,27 +100,35 @@ voice_modenable "1"
 
 // Music Volume
 snd_deathcamera_volume 0
-snd_mapobjective_volume 0.023 // The bomb music played prior to the ten-second warning
+snd_mapobjective_volume 0.0 // The bomb music played prior to the ten-second warning
 snd_menumusic_volume 0.042
 snd_roundend_volume 0
 snd_roundstart_volume 0
-snd_tensecondwarning_volume 0
+snd_mvp_volume 0
+snd_tensecondwarning_volume 0.042
  
 // r_drawtracers 0 //only for sv_cheats 1
-bind ctrl "+duck"
+// bind ctrl "+duck"
+
+// Jump-throw
+alias "+jt" "+jump;";
+alias "+ta" "-attack; -attack2"; 
+alias "-jt" "-jump";
+bind ctrl "+jt;+ta;" 
  
 cl_teamid_overhead_mode 1
 // "toggle show_loadout_toggle"
- 
-// Refund all items
-alias "refundall" "sellback 0;sellback 1;sellback 2;sellback 3;sellback 4;sellback 5;sellback 6;sellback 8;sellback 9;sellback 10;sellback 11;sellback 12;sellback 13;sellback 14;sellback 15;sellback 16;sellback 17;sellback 18;sellback 26;sellback 26;sellback 27;sellback 28;sellback 29;sellback 30;sellback 32;sellback 33;sellback 34;sellback 35;play ui\panorama\itemtile_click_02.vsnd_c"
-bind 0 refundall
  
 // Show auto-netgraph, fps, and build info on TAB
 alias +netg "cl_showfps 4; cq_netgraph_problem_show_auto 1;+showscores";
 alias -netg "cl_showfps 0; cq_netgraph_problem_show_auto 0;-showscores"
 bind TAB "+netg"
  
+// Fix bind unrelease bug + buymenu
+bind "b" "buymenu; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -radialradio"
+
+bind rctrl "callvote StartTimeOut"
+
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
 cl_radar_scale 0.35
@@ -139,13 +147,15 @@ cl_use_opens_buy_menu 0
 hud_scaling "1"
 cl_hud_radar_scale 1.15 
 
-sensitivity 0.85
+sensitivity 0.425 // 0.85 for 800dpi
  
 fps_max_ui 150
 r_fullscreen_gamma 2.3
 mm_dedicated_search_maxping 55
  
 alias gg "say gg; disconnect"
+
+// key_listboundkeys
 
 // Thelemetry
 //cl_hud_telemetry_frametime_show "2" //Show frame time and FPS
