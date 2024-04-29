@@ -155,6 +155,13 @@ mm_dedicated_search_maxping 55
  
 alias gg "say gg; disconnect"
 
+// Disable flashbang "ringing" sound (use before matches)
+snd_remove_soundevent Flashbang.Ring.Short;
+snd_remove_soundevent Flashbang.Ring.Long;
+snd_remove_soundevent Flashbang.Ring.Medium
+
+bind h "switchhands";
+
 // key_listboundkeys
 
 // Thelemetry
