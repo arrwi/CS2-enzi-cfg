@@ -1,4 +1,4 @@
-// enzi cs2 autoexec config 
+// enzi cs2 autoexec config 1may24v1
 // cs2folder>game>csgo>cfg>autoexec.cfg
 // Launch settings: -console -nojoy -novid +exec autoexec -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
