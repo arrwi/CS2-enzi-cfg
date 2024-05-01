@@ -129,6 +129,8 @@ bind TAB "+netg"
 bind "b" "buymenu; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -radialradio"
 
 bind rctrl "callvote StartTimeOut"
+bind capslock "sv_cheats 1; noclip"
+bind [ "getpos | bind ]" // (setpos) "]" teleports to a pos set by "["
 
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
