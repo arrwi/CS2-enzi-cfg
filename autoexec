@@ -12,7 +12,6 @@ r_show_build_info false
 install_dlc_workshoptools_cvar "1"
 lobby_default_privacy_bits2 "0"
 ui_setting_advertiseforhire_auto "0"
-cl_playerspray_auto_apply "true"
 cl_sniper_delay_unscope "false"
 cl_sniper_auto_rezoom "true"
 cl_silencer_mode "0"
@@ -21,6 +20,7 @@ cl_use_opens_buy_menu "false"
 cl_buywheel_nonumberpurchasing "true"
 cl_buywheel_donate_key "2" // Shift
 cl_autohelp 0
+cl_radar_scale_alternate 0.65 // toggleradarscale (default: 1), bind: alt
 
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
@@ -56,7 +56,7 @@ bind mouse4 "+secondarycommand"
 // Drop C4 bind
 alias "+dropc4" "slot3; slot5"
 alias "-dropc4" "drop"
-bind "mouse3" "+dropc4; noclip"
+bind "mouse3" "+dropc4; playerchatwheel CW.droppedbomb #Chatwheel_droppedbomb"
 
 // Bigger radar while walking
 alias "+bigr" "+sprint; cl_radar_scale 0.5"
@@ -154,12 +154,8 @@ mm_dedicated_search_maxping 55
  
 alias gg "say gg; disconnect"
 
-// Disable flashbang "ringing" sound (use before matches)
-snd_remove_soundevent Flashbang.Ring.Short;
-snd_remove_soundevent Flashbang.Ring.Long;
-snd_remove_soundevent Flashbang.Ring.Medium
-
 bind h "switchhands";
+bind alt "toggleradarscale";
 
 // key_listboundkeys
 
