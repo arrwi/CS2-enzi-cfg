@@ -1,6 +1,6 @@
-// enzi cs2 autoexec config 1may24v1
+// enzi cs2 autoexec config may2
 // cs2folder>game>csgo>cfg>autoexec.cfg
-// Launch settings: -console -nojoy -novid +exec autoexec -language english -fullscreen -forcenovsync
+// Launch settings: -console -nojoy -novid +exec enzi -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
  
 con_enable 1
@@ -32,6 +32,7 @@ alias defE      "bind e +use"
 alias defF      "bind f +lookatweapon"
 alias defG      "bind g drop"
 alias defT      "bind t +spray_menu"
+alias defR      "bind r +reload"
 //Part 2 (keyboard letters gotta be the same as part 1)
 alias keyZ      "bind z customZ"
 alias keyC      "bind c customC"
@@ -40,6 +41,7 @@ alias keyE      "bind e customE"
 alias keyF      "bind f customF"
 alias keyG      "bind g customG"
 alias keyT      "bind t customT"
+alias keyR      "bind r customR"
 //Part 3 (Secondary Commands)
 alias customZ   "radio"
 alias customC   "slot10"
@@ -48,9 +50,10 @@ alias customE   "slot7"
 alias customF   "slot8; slot12"
 alias customG   "slot9"
 alias customT   "radio1"
+alias customR   "-attack; -attack2; +reload"
 //Part 4 (Execution)
-alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG; keyT"
-alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; defT; -lookatweapon"
+alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG; keyT; keyR"
+alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; defT; defR"
 //Part 5 (Holding this will rebind default to secondary commands)
 bind mouse4 "+secondarycommand"
  
@@ -78,7 +81,7 @@ bind v "+runthrow; +throwaction"
  
 // Binds
 bind mouse5 +duck;
-bind "r" "+reload; -attack; -attack2" // for consistent Middle click throws
+bind "r" "+reload"
 bind x "+voicerecord"
 bind "6" "slot12" // healthshot
 bind n "+radialradio"
@@ -120,17 +123,24 @@ bind ctrl "+jt;+ta;"
 cl_teamid_overhead_mode 1
 // "toggle show_loadout_toggle"
  
+// Telegraph always on with TAB, only problems without
+alias telemetry_on "cl_hud_telemetry_serverrecvmargin_graph_show 2; cl_hud_telemetry_frametime_show 2; cl_hud_telemetry_ping_show 2; cl_hud_telemetry_net_misdelivery_show 2"
+alias telemetry_problems "cl_hud_telemetry_serverrecvmargin_graph_show 1; cl_hud_telemetry_frametime_show 1; cl_hud_telemetry_ping_show 1; cl_hud_telemetry_net_misdelivery_show 1"
+alias telemetry_off "cl_hud_telemetry_serverrecvmargin_graph_show 0; cl_hud_telemetry_frametime_show 0; cl_hud_telemetry_ping_show 0; cl_hud_telemetry_net_misdelivery_show 0"
+
 // Show auto-netgraph, fps, and build info on TAB
-alias +netg "cl_showfps 4; cq_netgraph_problem_show_auto 1;+showscores";
-alias -netg "cl_showfps 0; cq_netgraph_problem_show_auto 0;-showscores"
+alias +netg "cl_showfps 4; +showscores; telemetry_on";
+alias -netg "cl_showfps 0; -showscores; telemetry_problems"
 bind TAB "+netg"
  
 // Fix bind unrelease bug + buymenu
-bind "b" "buymenu; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -radialradio"
+bind "b" "buymenu; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -radialradio; -reload"
 
 bind rctrl "callvote StartTimeOut"
 bind capslock "sv_cheats 1; noclip"
 bind [ "getpos | bind ]" // (setpos) "]" teleports to a pos set by "["
+bind h "switchhands";
+bind alt "toggleradarscale";
 
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
@@ -139,10 +149,10 @@ cl_radar_square_with_scoreboard 0
 cl_hud_radar_scale 2
 cl_crosshair_friendly_warning 0
  
-viewmodel_fov 68
-viewmodel_offset_x 2.5
-viewmodel_offset_y 2
-viewmodel_offset_z -2
+viewmodel_fov 68;
+viewmodel_offset_x 2.5;
+viewmodel_offset_y 2;
+viewmodel_offset_z -2;
 
 cl_hud_color 5 // 1 – white; 2 – light blue; 3 – dark blue; 4 – purple; 5 – red; 6 – orange; 7 – yellow; 8 – green; 9 – aqua; 10 – pink; 11 – dark yellow
 cl_use_opens_buy_menu 0
@@ -157,8 +167,7 @@ mm_dedicated_search_maxping 55
  
 alias gg "say gg; disconnect"
 
-bind h "switchhands";
-bind alt "toggleradarscale";
+cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "0";cl_crosshaircolor_r "0";cl_crosshaircolor_g "255";cl_crosshairdot "0";cl_crosshairgap "-1";cl_crosshairsize "4";cl_crosshairstyle "4";cl_crosshairusealpha "1";cl_crosshairthickness "1";cl_fixedcrosshairgap "-1";cl_crosshair_outlinethickness "1";cl_crosshair_drawoutline "1";
 
 // key_listboundkeys
 
