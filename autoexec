@@ -21,7 +21,7 @@ cl_buywheel_nonumberpurchasing "true"
 cl_buywheel_donate_key "2" // Shift
 cl_autohelp 0
 cl_radar_scale_alternate 0.65 // toggleradarscale (default: 1), bind: alt
-cl_color 4 // 0-4:yellow,purple,green,blue,orange
+cl_color 5 // 0-4:yellow,purple,green,blue,orange
 
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
@@ -32,7 +32,7 @@ alias defE      "bind e +use"
 alias defF      "bind f +lookatweapon"
 alias defG      "bind g drop"
 alias defT      "bind t +spray_menu"
-alias defR      "bind r +reload"
+// alias defR      "bind r +reload"
 //Part 2 (keyboard letters gotta be the same as part 1)
 alias keyZ      "bind z customZ"
 alias keyC      "bind c customC"
@@ -41,7 +41,7 @@ alias keyE      "bind e customE"
 alias keyF      "bind f customF"
 alias keyG      "bind g customG"
 alias keyT      "bind t customT"
-alias keyR      "bind r customR"
+// alias keyR      "bind r customR" // still buggy
 //Part 3 (Secondary Commands)
 alias customZ   "radio"
 alias customC   "slot10"
@@ -50,10 +50,10 @@ alias customE   "slot7"
 alias customF   "slot8; slot12"
 alias customG   "slot9"
 alias customT   "radio1"
-alias customR   "-attack; -attack2; +reload"
+// alias customR   "-attack; -attack2; +reload"
 //Part 4 (Execution)
-alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG; keyT; keyR"
-alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; defT; defR"
+alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG; keyT"
+alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; defT"
 //Part 5 (Holding this will rebind default to secondary commands)
 bind mouse4 "+secondarycommand"
  
@@ -159,6 +159,8 @@ cl_use_opens_buy_menu 0
 hud_scaling "1"
 cl_hud_radar_scale 1.15 
 
+cl_teamid_overhead_fade_near_crosshair 0.65 // percentage of how much teammates overhead teamid fades when crosshair hovering over it (1= invisible)
+
 sensitivity 0.425 // 0.85 for 800dpi
  
 fps_max_ui 150
@@ -167,7 +169,7 @@ mm_dedicated_search_maxping 55
  
 alias gg "say gg; disconnect"
 
-cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "0";cl_crosshaircolor_r "0";cl_crosshaircolor_g "255";cl_crosshairdot "0";cl_crosshairgap "-1";cl_crosshairsize "4";cl_crosshairstyle "4";cl_crosshairusealpha "1";cl_crosshairthickness "1";cl_fixedcrosshairgap "-1";cl_crosshair_outlinethickness "1";cl_crosshair_drawoutline "1";
+cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "50";cl_crosshaircolor_r "50";cl_crosshaircolor_g "250";cl_crosshairdot "0";cl_crosshairgap "-2";cl_crosshairsize "4";cl_crosshairstyle "4";cl_crosshairusealpha "1";cl_crosshairthickness "0.5";cl_fixedcrosshairgap "-2";cl_crosshair_outlinethickness "1";cl_crosshair_drawoutline "1";
 
 // key_listboundkeys
 
