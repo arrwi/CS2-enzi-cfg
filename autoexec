@@ -1,4 +1,4 @@
-// enzi cs2 autoexec config may10
+// enzi cs2 autoexec config may11
 // cs2folder>game>csgo>cfg>autoexec.cfg
 // Launch settings: -console -nojoy -novid +exec enzi -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
@@ -21,7 +21,7 @@ cl_buywheel_nonumberpurchasing "true"
 cl_buywheel_donate_key "2" // Shift
 cl_autohelp 0
 cl_radar_scale_alternate 0.65 // toggleradarscale (default: 1), bind: alt
-cl_color 5 // 0-4:yellow,purple,green,blue,orange
+cl_color 3 // 0-4:yellow,purple,green,blue,orange (apparently wrong)
 
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
@@ -170,7 +170,7 @@ mm_dedicated_search_maxping 55
 alias gg "say gg; disconnect"
 alias nomusic "snd_menumusic_volume 0"
 
-cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "50";cl_crosshaircolor_r "50";cl_crosshaircolor_g "250";cl_crosshairdot "0";cl_crosshairgap "-2";cl_crosshairsize "4";cl_crosshairstyle "4";cl_crosshairusealpha "1";cl_crosshairthickness "0.5";cl_fixedcrosshairgap "-2";cl_crosshair_outlinethickness "1";cl_crosshair_drawoutline "1";
+cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "50";cl_crosshaircolor_r "50";cl_crosshaircolor_g "250";cl_crosshairdot "0";cl_crosshairgap "-2";cl_crosshairsize "3";cl_crosshairstyle "4";cl_crosshairusealpha "1";cl_crosshairthickness "0.5";cl_fixedcrosshairgap "-2";cl_crosshair_outlinethickness "1";cl_crosshair_drawoutline "1";
 
 // key_listboundkeys
 
