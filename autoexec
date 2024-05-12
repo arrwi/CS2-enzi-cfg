@@ -141,7 +141,7 @@ bind capslock "sv_cheats 1; noclip"
 bind [ "getpos | bind ]" // (setpos) "]" teleports to a pos set by "["
 bind j "switchhands";
 bind alt "toggleradarscale";
-bind h "toggle cl_crosshair_color 5 4; toggle cl_crosshair_recoil 0 1"
+bind h "toggle cl_crosshaircolor 5 4; toggle cl_crosshair_recoil 0 1"
 
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
