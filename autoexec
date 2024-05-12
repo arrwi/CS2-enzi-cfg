@@ -1,4 +1,4 @@
-// enzi cs2 autoexec config may11
+// enzi cs2 autoexec config may12
 // cs2folder>game>csgo>cfg>autoexec.cfg
 // Launch settings: -console -nojoy -novid +exec enzi -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
@@ -21,7 +21,7 @@ cl_buywheel_nonumberpurchasing "true"
 cl_buywheel_donate_key "2" // Shift
 cl_autohelp 0
 cl_radar_scale_alternate 0.65 // toggleradarscale (default: 1), bind: alt
-cl_color 3 // 0-4:yellow,purple,green,blue,orange (apparently wrong)
+cl_color 4 // 0-4:yellow,purple,green,blue,orange (apparently wrong)
 
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
@@ -58,9 +58,9 @@ alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; defT"
 bind mouse4 "+secondarycommand"
  
 // Drop C4 bind
-alias "+dropc4" "slot3; slot5"
-alias "-dropc4" "drop"
-bind "mouse3" "+dropc4; playerchatwheel CW.droppedbomb #Chatwheel_droppedbomb"
+alias +dropc4 "slot3; slot5"
+alias -dropc4 "drop; playerchatwheel CW.droppedbomb #Chatwheel_droppedbomb"
+bind mouse3 +dropc4
 
 // Bigger radar while walking
 alias "+bigr" "+sprint; cl_radar_scale 0.5"
@@ -139,8 +139,9 @@ bind "b" "buymenu; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -r
 bind rctrl "callvote StartTimeOut"
 bind capslock "sv_cheats 1; noclip"
 bind [ "getpos | bind ]" // (setpos) "]" teleports to a pos set by "["
-bind h "switchhands";
+bind j "switchhands";
 bind alt "toggleradarscale";
+bind h "toggle cl_crosshair_color 5 4; toggle cl_crosshair_recoil 0 1"
 
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
@@ -159,7 +160,7 @@ cl_use_opens_buy_menu 0
 hud_scaling "1"
 cl_hud_radar_scale 1.15 
 
-cl_teamid_overhead_fade_near_crosshair 0.65 // percentage of how much teammates overhead teamid fades when crosshair hovering over it (1= invisible)
+cl_teamid_overhead_fade_near_crosshair 0.75 // percentage of how much teammates overhead teamid fades when crosshair hovering over it (1= invisible)
 
 sensitivity 0.425 // 0.85 for 800dpi
  
