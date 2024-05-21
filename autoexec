@@ -1,5 +1,5 @@
-// enzi cs2 autoexec config may21
-// cs2folder>game>csgo>cfg>autoexec.cfg
+// enzi cs2 autoexec config may22
+// cs2folder>game>csgo>cfg>enzi.cfg
 // Launch settings: -console -nojoy -novid +exec enzi -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
  
@@ -25,7 +25,7 @@ cl_color 4 // 0-4:yellow,purple,green,blue,orange (apparently wrong)
 
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
-alias defZ      "bind z +cl_show_team_equipment; -attack; -attack2"
+alias defZ      "bind z +cl_show_team_equipment"
 alias defC      "bind c player_ping"
 alias defQ      "bind q lastinv"
 alias defE      "bind e +use"
@@ -131,13 +131,13 @@ alias -netg "cl_showfps 0; -showscores; telemetry_problems"
 bind TAB "+netg"
  
 // Fix bind unrelease bug + buymenu
-bind "b" "buymenu; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -radialradio; -reload"
+bind "b" "buymenu; -attack; -attack2; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -radialradio; -reload"
 
 bind rctrl "callvote StartTimeOut"
 bind capslock "sv_cheats 1; noclip"
 bind [ "getpos | bind ]" // (setpos) "]" teleports to a pos set by "["
 bind j "switchhands";
-bind alt "toggleradarscale";
+bind alt "toggleradarscale; -attack; -attack2";
 bind h "toggle cl_crosshaircolor 5 4; toggle cl_crosshair_recoil 0 1"
 
 cl_radar_always_centered 0
@@ -172,7 +172,7 @@ cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "50";cl_crossh
 
 // key_listboundkeys
 
-// Thelemetry
+// Telemetry
 //cl_hud_telemetry_frametime_show "2" //Show frame time and FPS
 //cl_hud_telemetry_frametime_poor "100" //Frame time warning threshold
 //cl_hud_telemetry_ping_show "2" //Show ping
