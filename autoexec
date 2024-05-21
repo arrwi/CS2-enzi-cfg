@@ -1,4 +1,4 @@
-// enzi cs2 autoexec config may12
+// enzi cs2 autoexec config may21
 // cs2folder>game>csgo>cfg>autoexec.cfg
 // Launch settings: -console -nojoy -novid +exec enzi -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
@@ -32,7 +32,6 @@ alias defE      "bind e +use"
 alias defF      "bind f +lookatweapon"
 alias defG      "bind g drop"
 alias defT      "bind t +spray_menu"
-// alias defR      "bind r +reload"
 //Part 2 (keyboard letters gotta be the same as part 1)
 alias keyZ      "bind z customZ"
 alias keyC      "bind c customC"
@@ -41,7 +40,6 @@ alias keyE      "bind e customE"
 alias keyF      "bind f customF"
 alias keyG      "bind g customG"
 alias keyT      "bind t customT"
-// alias keyR      "bind r customR" // still buggy
 //Part 3 (Secondary Commands)
 alias customZ   "radio"
 alias customC   "slot10"
@@ -50,7 +48,6 @@ alias customE   "slot7"
 alias customF   "slot8; slot12"
 alias customG   "slot9"
 alias customT   "radio1"
-// alias customR   "-attack; -attack2; +reload"
 //Part 4 (Execution)
 alias +secondarycommand "keyZ; keyC; keyQ; keyE; keyF; keyG; keyT"
 alias -secondarycommand "defZ; defC; defQ; defE; defF; defG; defT"
@@ -80,7 +77,7 @@ alias "-runthrow" "-jump;-forward"
 bind v "+runthrow; +throwaction"
  
 // Binds
-bind mouse5 +duck;
+bind mouse5 "+duck"
 bind "r" "+reload"
 bind x "+voicerecord"
 bind "6" "slot12" // healthshot
