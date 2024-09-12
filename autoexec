@@ -75,6 +75,18 @@ bind "mwheeldown" "+jump"
 //alias "+throwaction" "-attack; -attack2"
 //alias "-runthrow" "-jump;-forward"
 //bind v "+runthrow; +throwaction"
+
+//New jump-throw
+alias +muteh "unbind v"
+alias -muteh "bind v +jumpthrow"
+ 
+alias revert "bind mouse_x yaw"
+alias combo "-jump;revert;-muteh"
+alias +jumpthrow "+jump"
+alias -jumpthrow "-attack;muteh;bind mouse_x combo"
+ 
+bind v +jumpthrow
+
  
 // Binds
 bind mouse5 "+duck"
