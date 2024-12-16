@@ -1,4 +1,4 @@
-// enzi cs2 autoexec config 12sep
+// enzi cs2 autoexec config 12dec24
 // cs2folder>game>csgo>cfg>enzi.cfg
 // Launch settings: -console -nojoy -novid +exec enzi -language english -fullscreen -forcenovsync
 // "-high" adds more fps, but might cause instability in game crashes; -threads should have the number of cores ur CP has plus one
@@ -21,7 +21,10 @@ cl_buywheel_nonumberpurchasing "true"
 cl_buywheel_donate_key "2" // Shift
 cl_autohelp 0
 cl_radar_scale_alternate 0.65 // toggleradarscale (default: 1), bind: alt
-cl_color 3 // 0-4:yellow,purple,green,blue,orange (apparently wrong)
+cl_color 0 // 0-4:yellow,purple,green,blue,orange (apparently wrong) orange=3 blue=0
+
+tv_listen_voice_indices_h -1
+tv_listen_voice_indices -1
 
 // Nade binds as secondary commands
 //Part 1 (Primary/Default Command)
@@ -61,12 +64,14 @@ bind mouse3 +dropc4
 
 // Bigger radar while walking
 alias "+bigr" "+sprint; cl_radar_scale 0.5"
-alias "-bigr" "-sprint; cl_radar_scale 0.35"
+alias "-bigr" "-sprint; cl_radar_scale 0.4
 bind "SHIFT" "+bigr";
  
 // Consistent bhops
 //alias "+jump_" "+jump;+jump"
 //alias "-jump_" "-jump; -jump; -jump"
+//bind "mwheelup" "+jump_"
+//bind "mwheeldown" "+jump_"
 bind "mwheelup" "+jump"
 bind "mwheeldown" "+jump"
  
@@ -74,17 +79,15 @@ bind "mwheeldown" "+jump"
 //alias "+runthrow" "+forward;+jump" 
 //alias "+throwaction" "-attack; -attack2"
 //alias "-runthrow" "-jump;-forward"
-//bind v "+runthrow; +throwaction"
+//bind v "say_team This used to be a jumpthrow bind"
 
-//New jump-throw
-alias +muteh "unbind v"
-alias -muteh "bind v +jumpthrow"
- 
-alias revert "bind mouse_x yaw"
-alias combo "-jump;revert;-muteh"
+// New jumpthrow
+alias +njt "unbind v"
+alias -njt "bind v +jumpthrow"
+alias revert bind mouse_x yaw"
+alias combo "-jump;revert;-njt"
 alias +jumpthrow "+jump"
-alias -jumpthrow "-attack;muteh;bind mouse_x combo"
- 
+alias -jumpthrow "-attack;+njt;bind mouse_x combo"
 bind v +jumpthrow
 
  
@@ -105,7 +108,7 @@ bind space "+jump"
 snd_voipvolume 0.75
 
 // Sound
-volume 1
+volume 0.75
 sound_device_override true
 snd_headphone_eq "0" // EQ Profile: 0 = Natural, 1 = Crisp, 2 = Smooth
 snd_spatialize_lerp "0.50"
@@ -122,14 +125,13 @@ snd_mvp_volume 0
 snd_tensecondwarning_volume 0.042
  
 // r_drawtracers 0 //only for sv_cheats 1
-// bind ctrl "+duck"
+bind ctrl "+duck"
 
 // Jump-throw
-//alias "+jt" "+jump;";
+//alias "+jt" "+jump";
 //alias "+ta" "-attack; -attack2"; 
 //alias "-jt" "-jump";
-//bind ctrl "+jt;+ta;" 
-bind ctrl "+duck"
+//bind ctrl "+jt;+ta" 
  
 cl_teamid_overhead_mode 1
 // "toggle show_loadout_toggle"
@@ -147,13 +149,14 @@ bind TAB "+netg"
 // Fix bind unrelease bug + buymenu
 //bind "b" "buymenu; -attack; -attack2; -cl_show_team_equipment; -use; -lookatweapon; -spray_menu; -radialradio; -reload"
 bind "b" "buymenu; -use"
+bind "h" "-lookatweapon"
 
 bind rctrl "callvote StartTimeOut"
 bind capslock "sv_cheats 1; noclip"
 bind [ "getpos | bind ]" // (setpos) "]" teleports to a pos set by "["
 bind j "switchhands";
 bind alt "toggleradarscale; -attack; -attack2";
-//bind h "toggle cl_crosshaircolor 5 4; toggle cl_crosshair_recoil 0 1"
+// h "toggle cl_crosshaircolor 5 4; toggle cl_crosshair_recoil 0 1"
 
 cl_radar_always_centered 0
 cl_radar_icon_scale_min 0.3
@@ -183,7 +186,7 @@ mm_dedicated_search_maxping 55
 alias gg "say gg; disconnect"
 alias nomusic "snd_menumusic_volume 0"
 
-cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "50";cl_crosshaircolor_r "50";cl_crosshaircolor_g "250";cl_crosshairdot "0";cl_crosshairgap "-2";cl_crosshairsize "3";cl_crosshairstyle "4";cl_crosshairusealpha "1";cl_crosshairthickness "0.5";cl_fixedcrosshairgap "-2";cl_crosshair_outlinethickness "1";cl_crosshair_drawoutline "1";
+cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "50";cl_crosshaircolor_r "50";cl_crosshaircolor_g "250";cl_crosshairdot "0";cl_crosshairgap "-2";cl_crosshairsize "2.5";cl_crosshairstyle "4";cl_crosshairusealpha "1";cl_crosshairthickness "0.5";cl_fixedcrosshairgap "-2";cl_crosshair_outlinethickness "1";cl_crosshair_drawoutline "1";
 
 // key_listboundkeys
 
@@ -193,3 +196,27 @@ cl_crosshairalpha "200";cl_crosshaircolor "5";cl_crosshaircolor_b "50";cl_crossh
 //cl_hud_telemetry_ping_show "2" //Show ping
 //cl_hud_telemetry_net_misdelivery_show "2" //Show packet loss / misdelivery
 //cl_hud_telemetry_net_misdelivery_poor "5" //Packet misdelivery warning threshold
+
+// Nart optimization
+rate "1000000"
+net_client_steamdatagram_enable_override "1"
+mm_dedicated_search_maxping "60"
+cl_net_buffer_ticks "0"
+engine_no_focus_sleep "0"
+
+cl_cq_min_queue -1
+cq_min_queue_size 4
+cq_buffer_bloat_msecs 0
+cq_buffer_bloat_msecs_max 0
+
+
+fps_max "0"
+fps_max_ui "0"
+engine_low_latency_sleep_after_client_tick "true"    
+vprof_off
+cl_crosshair_friendly_warning "0"
+cl_ragdoll_workaround_threshold "0"
+cl_autohelp "0"
+iv_off
+
+host_writeconfig;
